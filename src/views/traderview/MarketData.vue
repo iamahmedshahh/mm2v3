@@ -16,7 +16,7 @@
     <div v-if="marketdata.asks">
       <div> 
         <v-layout>
-          <v-flex md lg>
+          <v-flex class="flex-grow-1" md lg>
             <v-card-title>Asks</v-card-title>
             <div class="table-container">
             <v-data-table
@@ -79,7 +79,7 @@ better implementation handled in parent component on load of orders, then promis
     <div v-if="marketdata.bids">
       <div>
         <v-layout>
-          <v-flex md lg>
+          <v-flex class="flex-grow-1" md lg>
             <v-card-title>Bids</v-card-title>
             <div class="table-container">
             <v-data-table
