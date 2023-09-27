@@ -48,8 +48,8 @@
                     <!-- <CurrentStrategies /> -->
                 </div>
                 <v-divider class="mx-4 pb-5"></v-divider>
-                <v-layout >
-                    <v-flex md6 lg6 class="flex-grow-1 flex-shrink-1">
+                <v-row >
+                    <v-col md6 lg6 class="flex-grow-1 flex-shrink-1">
                         <v-row class="px-4">
                             <v-col>
                                 <WalletInfo v-bind:wallets="wallets" v-on:refresh-balances="handleRefreshBalances" ref="refWalletInfo"/>
@@ -68,8 +68,8 @@
                                 </v-col>
                             </v-row>
                         </div>
-                    </v-flex>
-                    <v-flex md6 lg6 class="flex-grow-1 flex-shrink-1">
+                    </v-col>
+                    <v-col md6 lg6 class="flex-grow-1 flex-shrink-1">
                         <v-row class="px-4">
                             <v-col>
                                 <MarketData v-bind:wallets="wallets" v-bind:marketdata="marketOrders" v-bind:myOrdersThisMarket="myOrdersThisMarket" ref="refMarketData" v-on:refresh-market="handleRefreshMarket"/>
@@ -80,38 +80,8 @@
                                 <AutomatedMarketMaking v-bind:overlay="ammdisabled" ref="amm"/>
                             </v-col>
                         </v-row>
-                    </v-flex>
-                    <!-- <v-flex md6 lg6>
-          <v-row class="px-4">
-            <v-col>
-              <h2>My Market Maker Orders</h2>
-
-              <div v-if="myOrders.maker">
-                <div>
-                  <v-layout>
-                    <v-flex md6 lg6>
-                      <v-data-table
-                        :headers="orderHeaders"
-                        :items="myOrders.maker"
-                        :items-per-page="5"
-                        class="elevation-1"
-                      >
-                        <template v-slot:item.taker="{ item }">
-                          <v-chip color="green" dark @click.stop.prevent="soon()">
-                            Cancel
-                            <v-icon left>swap_horiz</v-icon>Cancel
-                          </v-chip>
-                        </template>
-                      </v-data-table>
-                    </v-flex>
-                  </v-layout>
-                </div>
-              </div>
-              <div v-else>No current maker orders to display.</div>
-            </v-col>
-          </v-row>
-        </v-flex>-->
-                </v-layout>
+                    </v-col>
+                </v-row>
             </div>
         </div>
     </v-main>
